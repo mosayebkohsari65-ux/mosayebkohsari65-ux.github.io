@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مرجع تخصصی ادیت PES PSP | دانلود کیت، فیس و تکسچر</title>
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
+    <style>
+        :root {
+            --bg-color: #080c14;
+            --card-bg: rgba(22, 31, 49, 0.7);
+            --accent-green: #00ff88;
+            --accent-blue: #00d2ff;
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --border-glow: rgba(0, 255, 136, 0.2);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Vazirmatn', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 255, 136, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 210, 255, 0.05) 0%, transparent 40%);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px 30px;
+            position: relative;
+        }
+
+        .badge {
+            background: linear-gradient(90deg, var(--accent-green), var(--accent-blue));
+            color: #000;
+            font-weight: 800;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.4);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            background: linear-gradient(to bottom, #fff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        p.subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .controls {
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .search-box {
+            width: 100%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px 20px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            font-size: 0.95rem;
+            outline: none;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent-green);
+            box-shadow: 0 0 15px rgba(0, 255, 136, 0.2);
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .tab-btn {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-muted);
+            padding: 8px 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .tab-btn.active, .tab-btn:hover {
+            background: var(--accent-green);
+            color: #000;
+            border-color: var(--accent-green);
+            box-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+        }
+
+        .grid-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            overflow: hidden;
+            backdrop-filter: blur(12px);
+            transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-7px);
+            border-color: var(--accent-green);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5), 0 0 15px var(--border-glow);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 180px;
+            background-color: #1a2332;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .card-body {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .card-tag {
+            font-size: 0.75rem;
+            color: var(--accent-blue);
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .card-desc {
+            font-size: 0.88rem;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .price {
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .price.free {
+            color: var(--accent-green);
+        }
+
+        .price.vip {
+            color: #ffb703;
+        }
+
+        .btn-action {
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            transition: all 0.2s;
+        }
+
+        .btn-download {
+            background: rgba(0, 255, 136, 0.15);
+            color: var(--accent-green);
+            border: 1px solid var(--accent-green);
+        }
+
+        .btn-download:hover {
+            background: var(--accent-green);
+            color: #000;
+        }
+
+        .btn-buy {
+            background: linear-gradient(90deg, #ffb703, #fb8500);
+            color: #000;
+            border: none;
+        }
+
+        .btn-buy:hover {
+            opacity: 0.9;
+            box-shadow: 0 0 10px rgba(255, 183, 3, 0.4);
+        }
+
+        .vip-banner {
+            max-width: 1060px;
+            margin: 50px auto 0;
+            background: linear-gradient(135deg, rgba(0, 210, 255, 0.1), rgba(0, 255, 136, 0.1));
+            border: 1px solid var(--accent-blue);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .vip-banner h2 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .vip-banner p {
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .btn-order {
+            display: inline-block;
+            background: var(--accent-blue);
+            color: #000;
+            padding: 12px 30px;
+            border-radius: 10px;
+            font-weight: 800;
+            text-decoration: none;
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.4);
+            transition: all 0.3s;
+        }
+
+        .btn-order:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .grid-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <span class="badge">مرجع رسمی پچ و ادیت PSP</span>
+        <h1>KING EDIT PSP HUB</h1>
+        <p class="subtitle">دانلود جدیدترین کیت‌ها، فیس‌ها، مینی‌کیت‌ها و آموزش‌های ساخت ادیت برای شبیه‌ساز PPSSPP</p>
+    </header>
+
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" onkeyup="filterCards()" placeholder="جستجوی کیت، فیس یا آموزش...">
+        </div>
+        <div class="filter-tabs">
+            <button class="tab-btn active" onclick="filterCategory('all')">همه فایل‌ها</button>
+            <button class="tab-btn" onclick="filterCategory('kit')">کیت و مینی‌کیت</button>
+            <button class="tab-btn" onclick="filterCategory('face')">فیس و مو</button>
+            <button class="tab-btn" onclick="filterCategory('tutorial')">آموزش‌ها</button>
+        </div>
+    </div>
+
+    <div class="grid-container" id="cardsGrid">
+
+        <div class="card" data-category="kit">
+            <img src="https://via.placeholder.com/400x240/1a2332/00ff88?text=Persepolis+Kit" alt="کیت پرسپولیس" class="card-img">
+            <div class="card-body">
+                <span class="card-tag">کیت و مینی‌کیت</span>
+                <h3 class="card-title">کیت فصل جدید پرسپولیس HD</h3>
+                <p class="card-desc">شامل کیت اول، دوم و دروازه‌بانی با کیفیت ۴K به‌همراه فایل MiniKit اختصاصی.</p>
+                <div class="card-footer">
+                    <span class="price free">رایگان</span>
+                    <a href="#" class="btn-action btn-download">دانلود فایل ZIP</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-category="kit">
+            <img src="https://via.placeholder.com/400x240/1a2332/00d2ff?text=Esteghlal+Kit" alt="کیت استقلال" class="card-img">
+            <div class="card-body">
+                <span class="card-tag">کیت و مینی‌کیت</span>
+                <h3 class="card-title">کیت استقلال لیگ برتر</h3>
+                <p class="card-desc">طراحی دقیق لوگوها، تکسچر شفاف و هماهنگ با تمامی شبیه‌سازهای PPSSPP.</p>
+                <div class="card-footer">
+                    <span class="price free">رایگان</span>
+                    <a href="#" class="btn-action btn-download">دانلود فایل ZIP</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-category="face">
+            <img src="https://via.placeholder.com/400x240/1a2332/ffb703?text=Face+Pack+HD" alt="پک فیس" class="card-img">
+            <div class="card-body">
+                <span class="card-tag">فیس و مو</span>
+                <h3 class="card-title">پک فیس اختصاصی ستاره‌ها</h3>
+                <p class="card-desc">شامل ۲۰ فیس واقعی با مدل موهای جدید و مدلسازی سه‌بعدی دقیق.</p>
+                <div class="card-footer">
+                    <span class="price vip">سفارشی</span>
+                    <a href="#" class="btn-action btn-buy">خرید / سفارش</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" data-category="tutorial">
+            <img src="https://via.placeholder.com/400x240/1a2332/ff0055?text=Tutorial+Video" alt="آموزش ادیت" class="card-img">
+            <div class="card-body">
+                <span class="card-tag">ویدیو آموزشی</span>
+                <h3 class="card-title">آموزش جایگذاری کیت در PSP</h3>
+                <p class="card-desc">ویدیو کامل آموزش قدم به قدم وارد کردن فایل‌های Textures در پوشه SAVEDATA.</p>
+                <div class="card-footer">
+                    <span class="price free">رایگان</span>
+                    <a href="#" class="btn-action btn-download">مشاهده ویدیو</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="vip-banner">
+        <h2>سفارش ساخت کیت و فیس اختصاصی</h2>
+        <p>کیت تیم محلی، تیم موردعلاقه یا فیس چهره خودتان را سفارش دهید تا با بالاترین کیفیت برایتان طراحی کنیم.</p>
+        <a href="https://t.me/your_id" class="btn-order">ثبت سفارش در تلگرام / روبیکا</a>
+    </div>
+
+    <footer>
+        <p>© ۲۰۲۶ طراحی شده توسط King Edit | تمامی حقوق محفوظ است.</p>
+        <p style="margin-top:5px; color:#555;">طراحی شده با GitHub Pages (رایگان و دائمی)</p>
+    </footer>
+
+    <script>
+        function filterCards() {
+            const searchInput = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const title = card.querySelector('.card-title').innerText.toLowerCase();
+                const desc = card.querySelector('.card-desc').innerText.toLowerCase();
+                
+                if (title.includes(searchInput) || desc.includes(searchInput)) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+        function filterCategory(category) {
+            const cards = document.querySelectorAll('.card');
+            const buttons = document.querySelectorAll('.tab-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = "flex";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>
